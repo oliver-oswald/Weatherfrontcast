@@ -4,6 +4,7 @@ import { Container } from "@mui/system";
 import { Paper } from "@mui/material";
 import Typography from "@mui/material/Typography";
 import CurrentView from "./components/CurrentView";
+import Zone from "./components/Zone";
 
 const App = () => {
   return (
@@ -13,8 +14,8 @@ const App = () => {
           Weather Backcast
         </Typography>
         <Paper sx={{ my: 2, p: 2, display: 'flex' }} elevation={6}>
-          <CurrentView variant="sunny" >33</CurrentView>
-          <Typography ml={"auto"} variant="h4">Hello World</Typography>
+          <CurrentView variant="sunny" >{{ celsius: 33, niederschlag: 0, luftfeuchte: 27, wind: 11 }}</CurrentView>
+          <Zone>{{city: "schaffhausen", day:"samstag", hour:"18", description:"sonnig"}}</Zone>
         </Paper>
       </Box>
     </Container>
