@@ -11,7 +11,7 @@ import WeatherChart from "./components/Chart";
 
 const App = () => {
 
-  const [currentMenu, setCurrentMenu] = useState("n");
+  const [currentMenu, setCurrentMenu] = useState("w");
 
   return (
     <Container maxWidth="lg" sx={{ height: "100%", width: "100%" }}>
@@ -64,6 +64,40 @@ const App = () => {
                 Math.floor(Math.random() * 100),
                 Math.floor(Math.random() * 100),
                 Math.floor(Math.random() * 100),
+                  ],
+                  wind: [
+                    {
+                      speed: Math.floor(Math.random() * 10),
+                      direction: Math.floor(Math.random() * 360)    
+                },
+                    {
+                      speed: Math.floor(Math.random() * 10),
+                      direction: Math.floor(Math.random() * 360)    
+                },
+                    {
+                      speed: Math.floor(Math.random() * 10),
+                      direction: Math.floor(Math.random() * 360)    
+                },
+                    {
+                      speed: Math.floor(Math.random() * 10),
+                      direction: Math.floor(Math.random() * 360)    
+                },
+                    {
+                      speed: Math.floor(Math.random() * 10),
+                      direction: Math.floor(Math.random() * 360)    
+                },
+                    {
+                      speed: Math.floor(Math.random() * 10),
+                      direction: Math.floor(Math.random() * 360)    
+                },
+                    {
+                      speed: Math.floor(Math.random() * 10),
+                      direction: Math.floor(Math.random() * 360)    
+                },
+                    {
+                      speed: Math.floor(Math.random() * 10),
+                      direction: Math.floor(Math.random() * 360)    
+                },
               ]
             }}
             />

@@ -14,7 +14,7 @@ const CurrentView = (props) => {
       setCelsius(Math.round((props.children.celsius * 9) / 5 + 32));
       setWind(Math.round(props.children.wind * 1.60934));
     }
-  }, [isCelsius, props.children.celsius]);
+  }, [isCelsius, props.children.celsius, props.children.wind]);
 
   return (
     <>

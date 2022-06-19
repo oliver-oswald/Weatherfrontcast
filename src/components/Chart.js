@@ -1,5 +1,7 @@
 import { Line, Bar } from "react-chartjs-2";
 import ChartDataLabels from "chartjs-plugin-datalabels";
+import Typography from "@mui/material/Typography"
+import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import Chart from "chart.js/auto";
 
 const WeatherChart = (props) => {
@@ -9,11 +11,11 @@ const WeatherChart = (props) => {
 const selectedChart = (props) => {
   switch (props.currentMenu) {
     case "t":
-      return <TemperatureChart data={props.data} labels={props.labels} />;
+      return <TemperatureChart data={props.data.temp} labels={props.labels} />;
     case "n":
-      return <RainChart data={props.data} labels={props.labels} />;
+      return <RainChart data={props.data.rain} labels={props.labels} />;
     case "w":
-      return <WindChart />;
+          return <WindChart data={props.data.wind} labels={props.labels} />;
     default:
       return <></>;
   }
@@ -27,7 +29,7 @@ const TemperatureChart = (props) => {
         datasets: [
           {
             label: "Temperature",
-            data: props.data.temp,
+            data: props.data,
             fill: true,
             backgroundColor: ["rgba(255, 204, 0, 0.2)"],
             borderColor: ["rgb(255, 204, 0)"],
@@ -93,7 +95,7 @@ const RainChart = (props) => {
         datasets: [
           {
             label: "Rain",
-            data: props.data.rain,
+            data: props.data,
             fill: true,
             backgroundColor: ["#1e3559"],
             borderColor: ["#8ab4f8"],
@@ -128,7 +130,7 @@ const RainChart = (props) => {
               size: 10,
               weight: "bold",
               },
-            offset: 20,
+            offset: 10,
               align: "end",
               anchor: "end",
               clamp: true,
@@ -160,11 +162,45 @@ const RainChart = (props) => {
   );
 };
 const WindChart = (props) => {
+    let data = [];
+    for (let i = 0; i < props.data.length; i++) {
+        data.push({...props.data[i], label:props.labels[i]})
+    }
     return (
-        <div height="100px">
-            
+        <div height="100px" style={{display: 'flex', flexDirection: "row", justifyContent: 'space-around', marginTop: '20px', marginBottom: "14.5px"}}>
+            {data.map((item, index) => {
+                return (
+                    <div key={index} style={{padding: "0 20px", display: "flex", flexDirection: "column", gap: "20px"}} >
+                        <Card speed={item.speed} direction={item.direction} label={ item.label } />
+                    </div>
+                );
+            }
+            )}
       </div>
   );
 };
+
+const Card = (props) => {
+    return (
+      <>
+        <Typography
+          variant="text"
+          style={{ fontSize: "90%", color: "#9aa0a6" }}
+        >
+            {props.speed} km/h
+            </Typography>
+            <div style={{margin: "auto"}}>
+                <ArrowForwardIcon sx={{transform: "rotate(-90deg) rotate(" + props.direction + "deg)", fontSize: props.speed*2+10}}/>
+            </div>
+        <Typography
+          variant="text"
+          style={{ fontSize: "90%", color: "#9aa0a6", textAlign: "center" }}
+        >
+            {props.label}
+            </Typography>
+      </>
+    );
+}
+
 
 export default WeatherChart;
