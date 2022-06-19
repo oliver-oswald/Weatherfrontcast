@@ -8,6 +8,7 @@ import Zone from "./components/Zone";
 import Selector from ".//components/Selector";
 import { useState } from "react";
 import WeatherChart from "./components/Chart";
+import WeekView from "./components/WeekView";
 
 const App = () => {
 
@@ -101,6 +102,59 @@ const App = () => {
               ]
             }}
             />
+          </div>
+          <div>
+            <WeekView data={[
+              {
+                variant: "sunny",
+                day: "So",
+                maxTemp: Math.floor(Math.random() * 20 + 10),
+                minTemp: Math.floor(Math.random() * 10),
+                isSelected: true,
+              },
+              {
+                variant: "sunny",
+                day: "Mo",
+                maxTemp: Math.floor(Math.random() * 20 + 10),
+                minTemp: Math.floor(Math.random() * 10),
+              },
+              {
+                variant: "partly_cloudy",
+                day: "Di",
+                maxTemp: Math.floor(Math.random() * 20 + 10),
+                minTemp: Math.floor(Math.random() * 10),
+              },
+              {
+                variant: "cloudy",
+                day: "Mi",
+                maxTemp: Math.floor(Math.random() * 20 + 10),
+                minTemp: Math.floor(Math.random() * 10),
+              },
+              {
+                variant: "rain_s_cloudy",
+                day: "Do",
+                maxTemp: Math.floor(Math.random() * 20 + 10),
+                minTemp: Math.floor(Math.random() * 10),
+              },
+              {
+                variant: "rain",
+                day: "Fr",
+                maxTemp: Math.floor(Math.random() * 20 + 10),
+                minTemp: Math.floor(Math.random() * 10),
+              },
+              {
+                variant: "thunderstorms",
+                day: "Sa",
+                maxTemp: Math.floor(Math.random() * 20 + 10),
+                minTemp: Math.floor(Math.random() * 10),
+              },
+              {
+                variant: "snow",
+                day: "So",
+                maxTemp: Math.floor(Math.random() * 20 + 10),
+                minTemp: Math.floor(Math.random() * 10),
+              }
+            ]} />
           </div>
         </Paper>
       </Box>
