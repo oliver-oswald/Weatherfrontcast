@@ -11,7 +11,7 @@ import WeatherChart from "./components/Chart";
 
 const App = () => {
 
-  const [currentMenu, setCurrentMenu] = useState("t");
+  const [currentMenu, setCurrentMenu] = useState("n");
 
   return (
     <Container maxWidth="lg" sx={{ height: "100%", width: "100%" }}>
@@ -44,7 +44,18 @@ const App = () => {
           <div>
             <WeatherChart currentMenu={currentMenu}
               labels={["14:00","17:00","20:00","23:00","02:00","05:00","08:00","11:00"]}
-              data= {[
+              data={
+                {temp: [
+                Math.floor(Math.random() * 40),
+                Math.floor(Math.random() * 40),
+                Math.floor(Math.random() * 40),
+                Math.floor(Math.random() * 40),
+                Math.floor(Math.random() * 40),
+                Math.floor(Math.random() * 40),
+                Math.floor(Math.random() * 40),
+                Math.floor(Math.random() * 40),
+              ],
+              rain: [
                 Math.floor(Math.random() * 100),
                 Math.floor(Math.random() * 100),
                 Math.floor(Math.random() * 100),
@@ -53,7 +64,8 @@ const App = () => {
                 Math.floor(Math.random() * 100),
                 Math.floor(Math.random() * 100),
                 Math.floor(Math.random() * 100),
-              ]}
+              ]
+            }}
             />
           </div>
         </Paper>

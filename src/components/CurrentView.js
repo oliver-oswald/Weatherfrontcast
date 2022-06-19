@@ -4,12 +4,15 @@ import  {useState, useEffect}  from 'react';
 const CurrentView = (props) => {
   const [isCelsius, setIsCelsius] = useState(true);
   const [celsius, setCelsius] = useState(props.children.celsius);
+  const [wind, setWind] = useState(props.children.wind);
 
   useEffect(() => {
     if (isCelsius) {
       setCelsius(props.children.celsius);
+      setWind(props.children.wind);
     } else {
       setCelsius(Math.round((props.children.celsius * 9) / 5 + 32));
+      setWind(Math.round(props.children.wind * 1.60934));
     }
   }, [isCelsius, props.children.celsius]);
 
@@ -83,7 +86,7 @@ const CurrentView = (props) => {
             variant="text"
             style={{ fontSize: "70%", color: "#9aa0a6" }}
           >
-            Wind: {props.children.wind} km/h
+            Wind: {wind} {isCelsius ? "km/h" : "mph"}
           </Typography>
         </div>
       </div>
