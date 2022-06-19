@@ -6,8 +6,13 @@ import Typography from "@mui/material/Typography";
 import CurrentView from "./components/CurrentView";
 import Zone from "./components/Zone";
 import Selector from ".//components/Selector";
+import { useState } from "react";
+import WeatherChart from "./components/Chart";
 
 const App = () => {
+
+  const [currentMenu, setCurrentMenu] = useState("t");
+
   return (
     <Container maxWidth="lg" sx={{ height: "100%", width: "100%" }}>
       <Box sx={{ height: "100%" }} align="center">
@@ -34,7 +39,22 @@ const App = () => {
           <div style={{
             display: "flex", padding: "10px 0"  
           }}>
-            <Selector/>
+            <Selector currentMenu={currentMenu} setCurrentMenu={setCurrentMenu} />
+          </div>
+          <div>
+            <WeatherChart currentMenu={currentMenu}
+              labels={["14:00","17:00","20:00","23:00","02:00","05:00","08:00","11:00"]}
+              data= {[
+                Math.floor(Math.random() * 100),
+                Math.floor(Math.random() * 100),
+                Math.floor(Math.random() * 100),
+                Math.floor(Math.random() * 100),
+                Math.floor(Math.random() * 100),
+                Math.floor(Math.random() * 100),
+                Math.floor(Math.random() * 100),
+                Math.floor(Math.random() * 100),
+              ]}
+            />
           </div>
         </Paper>
       </Box>

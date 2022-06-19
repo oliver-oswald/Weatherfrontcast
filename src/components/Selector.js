@@ -1,10 +1,7 @@
 import { Link } from "@mui/material";
 import { Divider } from "@mui/material";
-import { useState } from "react";
 
 const Selector = (props) => {
-
-  const [selected, setSelected] = useState("t");
 
   const style = {
     base: {
@@ -22,10 +19,10 @@ const Selector = (props) => {
       <Link
         component="button"
         variant="body2"
-        sx={Object.assign({}, style.base, selected === "t" && style.selected)}
+        sx={Object.assign({}, style.base, props.currentMenu === "t" && style.selected)}
         underline="none"
         onClick={() => {
-          setSelected("t");
+          props.setCurrentMenu("t");
         }}
       >
         Temperatur
@@ -40,10 +37,10 @@ const Selector = (props) => {
       <Link
         component="button"
         variant="body2"
-        sx={Object.assign({}, style.base, selected === "n" && style.selected)}
+        sx={Object.assign({}, style.base, props.currentMenu === "n" && style.selected)}
         underline="none"
         onClick={() => {
-          setSelected("n");
+          props.setCurrentMenu("n");
         }}
       >
         Niederschlag
@@ -58,10 +55,10 @@ const Selector = (props) => {
       <Link
         component="button"
         variant="body2"
-        sx={Object.assign({}, style.base, selected === "w" && style.selected)}
+        sx={Object.assign({}, style.base, props.currentMenu === "w" && style.selected)}
         underline="none"
         onClick={() => {
-          setSelected("w");
+          props.setCurrentMenu("w");
         }}
       >
         Wind
