@@ -12,7 +12,7 @@ import WeekView from "./components/WeekView";
 
 const App = () => {
 
-  const [currentMenu, setCurrentMenu] = useState("w");
+  const [currentMenu, setCurrentMenu] = useState("t");
 
   return (
     <Container maxWidth="lg" sx={{ height: "100%", width: "100%" }}>
