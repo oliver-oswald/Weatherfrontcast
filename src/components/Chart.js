@@ -167,7 +167,7 @@ const WindChart = (props) => {
         data.push({...props.data[i], label:props.labels[i]})
     }
     return (
-        <div height="100px" style={{display: 'flex', flexDirection: "row", justifyContent: 'space-around', marginTop: '20px', marginBottom: "14.5px"}}>
+        <div height="100px" style={{display: 'flex', flexDirection: "row", justifyContent: 'space-around', marginTop: '20px', marginBottom: "14.5git px"}}>
             {data.map((item, index) => {
                 return (
                     <div key={index} style={{padding: "0 20px", display: "flex", flexDirection: "column", gap: "20px"}} >

@@ -106,55 +106,66 @@ const App = () => {
           <div>
             <WeekView data={[
               {
+                id: 0,
                 variant: "sunny",
                 day: "So",
                 maxTemp: Math.floor(Math.random() * 20 + 10),
                 minTemp: Math.floor(Math.random() * 10),
-                isSelected: true,
               },
               {
+                id: 1,
                 variant: "sunny",
                 day: "Mo",
                 maxTemp: Math.floor(Math.random() * 20 + 10),
                 minTemp: Math.floor(Math.random() * 10),
               },
               {
+                id: 2,
                 variant: "partly_cloudy",
                 day: "Di",
                 maxTemp: Math.floor(Math.random() * 20 + 10),
                 minTemp: Math.floor(Math.random() * 10),
               },
               {
+                id: 3,
                 variant: "cloudy",
                 day: "Mi",
                 maxTemp: Math.floor(Math.random() * 20 + 10),
                 minTemp: Math.floor(Math.random() * 10),
               },
               {
+                id: 4,
                 variant: "rain_s_cloudy",
                 day: "Do",
                 maxTemp: Math.floor(Math.random() * 20 + 10),
                 minTemp: Math.floor(Math.random() * 10),
               },
               {
+                id: 5,
                 variant: "rain",
                 day: "Fr",
                 maxTemp: Math.floor(Math.random() * 20 + 10),
                 minTemp: Math.floor(Math.random() * 10),
               },
               {
+                id: 6,
                 variant: "thunderstorms",
                 day: "Sa",
                 maxTemp: Math.floor(Math.random() * 20 + 10),
                 minTemp: Math.floor(Math.random() * 10),
               },
               {
+                id: 7,
                 variant: "snow",
                 day: "So",
                 maxTemp: Math.floor(Math.random() * 20 + 10),
                 minTemp: Math.floor(Math.random() * 10),
+                isSelected: true,
               }
-            ]} />
+            ]}
+              onClick={(e) => {
+                console.log(e)
+              } } />
           </div>
         </Paper>
       </Box>
