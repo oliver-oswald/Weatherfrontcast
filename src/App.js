@@ -114,7 +114,7 @@ const App = () => {
               },
               {
                 id: 1,
-                variant: "partly_cloudy",
+                variant: "cloudy",
                 day: "Mo",
                 maxTemp: Math.floor(Math.random() * 20 + 10),
                 minTemp: Math.floor(Math.random() * 10),
