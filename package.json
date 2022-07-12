@@ -1,5 +1,6 @@
 {
   "name": "weatherfrontcast",
+  "homepage": "http://84.226.138.247",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
