@@ -2,6 +2,7 @@ import { Line, Bar } from "react-chartjs-2";
 import ChartDataLabels from "chartjs-plugin-datalabels";
 import Typography from "@mui/material/Typography"
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import Chart from 'chart.js/auto';
 
 const WeatherChart = (props) => {
   return <>{selectedChart(props)}</>;
