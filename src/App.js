@@ -114,7 +114,7 @@ const App = () => {
               },
               {
                 id: 1,
-                variant: "snow",
+                variant: "sunny",
                 day: "Mo",
                 maxTemp: Math.floor(Math.random() * 20 + 10),
                 minTemp: Math.floor(Math.random() * 10),
