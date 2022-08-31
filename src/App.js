@@ -14,6 +14,73 @@ const App = () => {
 
   const [currentMenu, setCurrentMenu] = useState("t");
 
+  var data = [
+    {
+      id: 0,
+      variant: "sunny",
+      day: "So",
+      maxTemp: Math.floor(Math.random() * 20 + 10),
+      minTemp: Math.floor(Math.random() * 10),
+      isSelected: false,
+    },
+    {
+      id: 1,
+      variant: "sunny",
+      day: "Mo",
+      maxTemp: Math.floor(Math.random() * 20 + 10),
+      minTemp: Math.floor(Math.random() * 10),
+      isSelected: false,
+    },
+    {
+      id: 2,
+      variant: "partly_cloudy",
+      day: "Di",
+      maxTemp: Math.floor(Math.random() * 20 + 10),
+      minTemp: Math.floor(Math.random() * 10),
+      isSelected: false,
+    },
+    {
+      id: 3,
+      variant: "cloudy",
+      day: "Mi",
+      maxTemp: Math.floor(Math.random() * 20 + 10),
+      minTemp: Math.floor(Math.random() * 10),
+      isSelected: false,
+    },
+    {
+      id: 4,
+      variant: "rain_s_cloudy",
+      day: "Do",
+      maxTemp: Math.floor(Math.random() * 20 + 10),
+      minTemp: Math.floor(Math.random() * 10),
+      isSelected: false,
+    },
+    {
+      id: 5,
+      variant: "rain",
+      day: "Fr",
+      maxTemp: Math.floor(Math.random() * 20 + 10),
+      minTemp: Math.floor(Math.random() * 10),
+      isSelected: false,
+    },
+    {
+      id: 6,
+      variant: "thunderstorms",
+      day: "Sa",
+      maxTemp: Math.floor(Math.random() * 20 + 10),
+      minTemp: Math.floor(Math.random() * 10),
+      isSelected: false,
+    },
+    {
+      id: 7,
+      variant: "snow",
+      day: "So",
+      maxTemp: Math.floor(Math.random() * 20 + 10),
+      minTemp: Math.floor(Math.random() * 10),
+      isSelected: true,
+    },
+  ];
+    
   return (
     <Container maxWidth="lg" sx={{ height: "100%", width: "100%" }}>
       <Box sx={{ height: "100%" }} align="center">
@@ -104,68 +171,19 @@ const App = () => {
             />
           </div>
           <div>
-            <WeekView data={[
-              {
-                id: 0,
-                variant: "sunny",
-                day: "So",
-                maxTemp: Math.floor(Math.random() * 20 + 10),
-                minTemp: Math.floor(Math.random() * 10),
-              },
-              {
-                id: 1,
-                variant: "sunny",
-                day: "Mo",
-                maxTemp: Math.floor(Math.random() * 20 + 10),
-                minTemp: Math.floor(Math.random() * 10),
-              },
-              {
-                id: 2,
-                variant: "partly_cloudy",
-                day: "Di",
-                maxTemp: Math.floor(Math.random() * 20 + 10),
-                minTemp: Math.floor(Math.random() * 10),
-              },
-              {
-                id: 3,
-                variant: "cloudy",
-                day: "Mi",
-                maxTemp: Math.floor(Math.random() * 20 + 10),
-                minTemp: Math.floor(Math.random() * 10),
-              },
-              {
-                id: 4,
-                variant: "rain_s_cloudy",
-                day: "Do",
-                maxTemp: Math.floor(Math.random() * 20 + 10),
-                minTemp: Math.floor(Math.random() * 10),
-              },
-              {
-                id: 5,
-                variant: "rain",
-                day: "Fr",
-                maxTemp: Math.floor(Math.random() * 20 + 10),
-                minTemp: Math.floor(Math.random() * 10),
-              },
-              {
-                id: 6,
-                variant: "thunderstorms",
-                day: "Sa",
-                maxTemp: Math.floor(Math.random() * 20 + 10),
-                minTemp: Math.floor(Math.random() * 10),
-              },
-              {
-                id: 7,
-                variant: "snow",
-                day: "So",
-                maxTemp: Math.floor(Math.random() * 20 + 10),
-                minTemp: Math.floor(Math.random() * 10),
-                isSelected: true,
-              }
-            ]}
+            <WeekView data={data}
               onClick={(e) => {
-                console.log(e)
-              } } />
+                data.forEach((item) => {
+                  if (item.id === e) {
+                    item.isSelected = true;
+                  } else {
+                    item.isSelected = false;
+                  }
+                }
+                )
+                console.log(data)
+              }
+              } />
           </div>
         </Paper>
       </Box>

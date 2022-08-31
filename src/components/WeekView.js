@@ -1,4 +1,5 @@
 import { Typography } from "@mui/material";
+import { useEffect } from "react";
 import Image from "./Image";
 
 const WeekView = (props) => {
@@ -14,6 +15,7 @@ const WeekView = (props) => {
         return (
           <DayView
             key={idx}
+            id={data.id}
             variant={data.variant}
             day={data.day}
             maxTemp={data.maxTemp}
@@ -40,7 +42,7 @@ const DayView = (props) => {
         },
         props.isSelected && { backgroundColor: "#585a5f" }
       )}
-      onClick={props.onClick}
+      onClick={() => props.onClick(props.id)}
     >
       <Typography
         variant="h5"
